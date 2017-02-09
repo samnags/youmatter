@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
-  get "signup" => "users#new", as: "signup"
-  get "login" => "sessions#new", as: "login"
-  get "logout" => "sessions#destroy", as: "logout"
-  
+  devise_for :users, controllers: {
+      sessions: 'users/sessions',
+      # password: 'users/passwords',
+      # registration: 'users/registrations',
+      # confirmation: 'users/confirmations'
+  }
+
+  root to: "home#index"
+
 end
