@@ -9,7 +9,7 @@ def create
     session[:user_id] = user.id
     redirect_to user_path(user), notice: "Logged In"
   else
-    render :new, notice: "Email or password is invalid"
+    render :new, notice: "Email or password is invalid"    
   end
 end
 
