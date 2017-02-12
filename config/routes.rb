@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  # resources :accomplishments, path :/
   resources :user_accomplishments, path: "/accomplishments"
   root to: 'sessions#new'
 

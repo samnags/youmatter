@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+a = Accomplishment.new(name: "Attended workshop")
+b = Accomplishment.create(name: "Registered to vote")
+c = Accomplishment.create(name: "Added Elected Officials")

@@ -1,23 +1,18 @@
-<% if @accomplishment.errors.any? %>
+<% if @ua.errors.any? %>
    <ul>
-     <% @accomplishment.errors.full_messages.each do |msg| %>
+     <% @ua.errors.full_messages.each do |msg| %>
        <li> <%= msg %> </li>
      <% end %>
    </ul>
  <% end %>
 
-<%= form_for @accomplishment do |f| %>
-  <h3>Have you attended a workshop?</h3><br />
-  <%= f.radio_button :attended_workshop, true, checked: false %>
-  <%= label_tag(:attended_workshop, "Yes") %><br />
-  <%= f.radio_button :attended_workshop, false, checked: false %>
-  <%= label_tag(:attended_workshop, "No") %><br /><br />
+<h3>Have you attended a workshop?</h3><br />
+<%= form_for @ua do |f| %>
+  <% @accomplishments.each do |acc| %>     
+      <%= label_tag acc.id, acc.name %><br>
+      <%= check_box_tag acc.name, acc.id %><br>
+  <% end %>
 
-  <%= f.label :registered, "Are you registered to vote?" %><br />
-  <%= f.radio_button :registered, true, checked: false %>
-  <%= label_tag(:registered, "Yes") %><br />
-  <%= f.radio_button :registered, false, checked: false %>
-  <%= label_tag(:registered, "No") %><br />
 
   <%= f.submit "Add accomplishment" %>
 <% end %>

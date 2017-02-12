@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       session[:user_id] = @user.id
+      add_initial_accomplishments
       redirect_to @user
     else
       render :new
@@ -23,6 +24,21 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :first_name, :last_name, :password, :password_confirmation, :phone, :zipcode)
+  end
+
+  def accomplishment_params
+    params.permit(:workshop, :registered)
+  end
+
+  def add_initial_accomplishments
+    if !!accomplishment_params[:workshop]
+      byebug
+      UserAccomplishment.create(accomplishment: Accomplishment.find_by(name: "Attended workshop"), user: current_user)
+    end
+    if !!accomplishment_params[:registered]
+      byebug
+      UserAccomplishment.create(accomplishment: Accomplishment.find_by(name: "Registered to vote"), user: current_user)
+    end
   end
 
 end

@@ -28,5 +28,11 @@
   <%= f.label :phone %><br />
   <%= f.telephone_field :phone %><br />
 
+  <%= label_tag "Have you attended a workshop?" %><br>
+  <%= check_box_tag "workshop", value=true, checked=false %><br>
+
+  <%= label_tag "Are you registered to vote?" %><br>
+  <%= check_box_tag "registered", value=true, checked=false %><br>
+
   <%= f.submit %>
  <% end %>

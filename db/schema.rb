@@ -11,18 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170212181811) do
+ActiveRecord::Schema.define(version: 20170212192330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "accomplishments", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_accomplishments", force: :cascade do |t|
     t.integer  "user_id"
-    t.boolean  "attended_workshop", default: false
-    t.boolean  "registered",        default: false
-    t.boolean  "added_electeds",    default: false
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "accomplishment_id"
   end
 
   create_table "users", force: :cascade do |t|
