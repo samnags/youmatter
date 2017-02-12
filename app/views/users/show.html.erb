@@ -2,4 +2,15 @@
 
 
 
-My name is <%= @user.first_name %>
+My name is <%= @user.first_name %> </br> </br>
+
+
+<h4>My accomplishments</h4>
+<ul>
+   <% @accomplishments.each do |acc| %>
+   <li><%=acc.name %> <%= acc.created_at %></li>
+   <% end %>
+</ul>
+
+
+<h4>Next Steps</h4>

@@ -8,7 +8,10 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :zipcode, presence: true
 
-
-  
+  def available_accomplishments
+    Accomplishment.all.reject { |acc| self.accomplishments.include?(acc)}
+  end
 
 end
+
+# Accomplishment.all.pluck(:id).reject { |id| user.accomplishments.pluck(:id).include?(id)}
