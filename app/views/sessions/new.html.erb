@@ -1,9 +1,8 @@
-<% byebug %> 
-
-<%= notice %>
-
 <div class="jumbotron log_in">
   <h2 style="text-align:center; margin-bottom:20px;">Log In</h2>
+
+  <%= flash[:notice]%>
+
   <%= form_tag sessions_path do %>
       <div class="field">
         <%= label_tag :email %><br>
@@ -20,5 +19,3 @@
 
   <% end %>
 </div>
-
-<%= flash[:notice]%>
