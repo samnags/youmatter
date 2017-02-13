@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @accomplishments = AccomplishmentDecorator.decorate_collection(@user.accomplishments)
+    @remaining_accomplishments = AccomplishmentDecorator.decorate_collection(@user.available_accomplishments)
   end
 
 

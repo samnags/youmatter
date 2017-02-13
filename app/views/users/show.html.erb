@@ -14,3 +14,8 @@ My name is <%= @user.first_name %> </br> </br>
 
 
 <h4>Next Steps</h4>
+<ul>
+   <% @remaining_accomplishments.each do |acc| %>
+   <li><%=acc.present_tense %></li>
+   <% end %>
+</ul>
