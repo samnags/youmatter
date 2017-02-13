@@ -15,16 +15,17 @@
         <div class="navbar-brand">
           <a href="/">You Matter</a>
         </div>
-        <ul class="nav nav-tabs float-right">
+        <ul class="nav nav-tabs">
+          <li><a href=#>Upcoming Events</a></li>
           <% if !current_user %>
-            <li><a href=<%= signup_path %>>Sign Up</a></li>
-            <li><a href=<%= login_path %>>Log In</a></li>
+            <li class="navbar-right"><a href=<%= signup_path %>>Sign Up</a></li>
+            <li class="navbar-right"><a href=<%= login_path %>>Log In</a></li>
           <% else %>
-            <li><a href=<%= logout_path %>>Log Out</a></li>
+            <li class="navbar-right"><a href=<%= logout_path %>>Log Out</a></li>
           <% end %>
         </ul>
-    </div>
       </div>
+    </div>
   </nav>
 </header>
 

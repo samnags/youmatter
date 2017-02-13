@@ -8,7 +8,7 @@ class AccomplishmentDecorator < Draper::Decorator
   def present_tense
     case object.name
     when "Registered to vote"
-      return "Register to vote"
+      return h.link_to("Register to vote", "https://vote.gov/?1", :target => "_blank")
     when "Added Elected Officials"
       return "Add elected officials"
     when "Attended workshop"
