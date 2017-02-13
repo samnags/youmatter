@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :electeds
   # resources :accomplishments, path :/
   resources :user_accomplishments, path: "/accomplishments"
   root to: 'pages#home'

@@ -1,0 +1,2 @@
+module ElectedsHelper
+end

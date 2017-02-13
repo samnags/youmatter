@@ -1,0 +1,2 @@
+class ElectedsController < ApplicationController
+end
