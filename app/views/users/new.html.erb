@@ -1,14 +1,16 @@
-<% if @user.errors.any? %>
-   <ul>
-     <% @user.errors.full_messages.each do |msg| %>
-       <li> <%= msg %> </li>
-     <% end %>
-   </ul>
- <% end %>
+  <% if @user.errors.any? %>
+     <ul>
+       <% @user.errors.full_messages.each do |msg| %>
+         <li> <%= msg %> </li>
+       <% end %>
+     </ul>
+   <% end %>
 
+<div class="input-group">
  <%= form_for @user do |f| %>
   <%= f.label :email %><br />
   <%= f.email_field :email %><br />
+
 
   <%= f.label :first_name %><br />
   <%= f.text_field :first_name %><br />
@@ -34,5 +36,8 @@
   <%= label_tag "Are you registered to vote?" %><br>
   <%= check_box_tag "registered", value=true, checked=false %><br>
 
-  <%= f.submit %>
+  <%= f.submit :class=>"btn btn-primary" %>
+
  <% end %>
+
+</div>

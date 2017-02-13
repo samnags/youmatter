@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :zipcode, presence: true
 
   def available_accomplishments
-    Accomplishment.all.reject { |acc| self.accomplishments.include?(acc)}
+    Accomplishment.all.reject { |acc| self  .accomplishments.include?(acc)}
   end
 
 end
