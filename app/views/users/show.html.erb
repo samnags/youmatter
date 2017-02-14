@@ -7,7 +7,7 @@
 <h4>My accomplishments</h4>
 <ul>
    <% @accomplishments.each do |acc| %>
-   <li class="list-unstyled"><span class="glyphicon glyphicon-ok"></span>  <%=acc.name %> <%= acc.created_at %></li>
+   <li class="list-unstyled"><span class="glyphicon glyphicon-ok"></span>  <%=acc.name %>   <%= acc.add_more %></li>
    <% end %>
 </ul>
 
@@ -15,7 +15,7 @@
 <h4>Next Steps</h4>
 <ul>
    <% @remaining_accomplishments.each do |acc| %>
-   <li class="list-unstyled"><span class="glyphicon glyphicon-unchecked"></span>  <%=acc.present_tense %></li>
+   <li class="list-unstyled"><span class="register glyphicon glyphicon-unchecked"></span>  <%=acc.present_tense %></li>
    <% end %>
 </ul>
 

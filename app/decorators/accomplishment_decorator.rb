@@ -5,6 +5,12 @@ class AccomplishmentDecorator < Draper::Decorator
     object.created_at.strftime("on %m/%d/%Y")
   end
 
+  def add_more
+    if object.name == "Added Elected Officials"
+      h.link_to("Add more", "/new_elected")
+    end
+  end
+
   def present_tense
     case object.name
     when "Registered to vote"
