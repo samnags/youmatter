@@ -1,10 +1,13 @@
-  <% if @user.errors.any? %>
-     <ul>
-       <% @user.errors.full_messages.each do |msg| %>
-         <li> <%= msg %> </li>
-       <% end %>
-     </ul>
-   <% end %>
+<% if @user.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li> <%= msg %> </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 
 <div class="input-group">
  <%= form_for @user do |f| %>
@@ -31,10 +34,12 @@
   <%= f.telephone_field :phone %><br />
 
   <%= label_tag "Have you attended a workshop?" %><br>
-  <%= check_box_tag "workshop", value=true, checked=false %><br>
+  <%= check_box_tag "workshop", value=true, checked=false %>
+  <%= label_tag "Yes" %> <br>
 
   <%= label_tag "Are you registered to vote?" %><br>
-  <%= check_box_tag "registered", value=true, checked=false %><br>
+  <%= check_box_tag "registered", value=true, checked=false %>
+  <%= label_tag "Yes" %> <br>
 
   <%= f.submit :class=>"btn btn-primary" %>
 

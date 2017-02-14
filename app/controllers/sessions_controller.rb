@@ -9,7 +9,8 @@ def create
     session[:user_id] = user.id
     redirect_to user, notice: "Logged In"
   else
-    render :new, notice: "Error"
+    flash[:notice] = 'Incorrect email or password'
+    render :new
   end
 end
 
