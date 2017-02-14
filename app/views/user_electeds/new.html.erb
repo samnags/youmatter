@@ -1,0 +1,21 @@
+<% if @user_elected.errors.any? %>
+   <ul>
+     <% @user_elected.errors.full_messages.each do |msg| %>
+       <li> <%= msg %> </li>
+     <% end %>
+   </ul>
+ <% end %>
+
+<div class="input-group">
+  <%= form_for @user_elected do |f| %>
+    <%= f.label :category, "Office" %>
+    <%= f.collection_select(:elected_id, Elected.order(:category), :id, :category) %> </br>
+    <%= f.label  :first_name %>
+    <%= f.text_field :first_name %> </br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %> </br>
+    <%= f.label :party %>
+    <%= f.select :party, options_for_select([['Democratic'], ['Republican'], ['Independent'], ['Green'], ['Libertarian']]) %> </br>
+    <%= f.submit "Add Elected" %>
+  <% end %>
+</div>

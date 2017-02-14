@@ -19,3 +19,22 @@ My name is <%= @user.first_name %> </br> </br>
    <li><%=acc.present_tense %></li>
    <% end %>
 </ul>
+
+<h4>Electeds</h4>
+
+<table class="table">
+  <tr>
+    <th>Position</th>
+    <th>Name</th>
+    <th>Party</th>
+    <th>Level</th>
+  </tr>
+  <% @electeds.each do |ele| %>
+  <tr>
+    <td><%= ele.elected.category %></td>
+    <td><%= ele.full_name %></td>
+    <td><%= ele.party %></td>
+    <td><%= ele.elected.level %></td>
+  </tr>
+  <% end %>
+</table>
