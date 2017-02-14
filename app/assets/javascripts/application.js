@@ -17,9 +17,29 @@
 
 $(document).ready(function() {
 
-  function register() {
-      alert("hi")
-  }
+  $(".register").click(function(){
+    $.ajax({
+      url: "/register",
+      method: 'POST',
+    })
+  })
+
+  $(".attend").click(function(){
+    $.ajax({
+      url: "/attend",
+      method: 'POST',
+    })
+  })
+
+
+  // $.ajax({
+  //           url: '/messages',
+  //           method: 'POST',
+  //           data: {message: {conversation_id: conversationId, content: content, user_id: user_id}}
+  //         }).success(function(data){
+  //           refreshChat(data.messages);
+  //           $('#message_content').val("");
+  //         })
 
 
 
