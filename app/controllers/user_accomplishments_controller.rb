@@ -22,6 +22,7 @@ class UserAccomplishmentsController < ApplicationController
   end
 
   def attend_event
+    byebug
     ua = UserAccomplishment.create(user: current_user, accomplishment: Accomplishment.find_by(name: "Attended workshop"))
     if ua.save
       redirect_to user_path(current_user)

@@ -8,7 +8,7 @@
 
 <h3>Have you attended a workshop?</h3><br />
 <%= form_for @ua do |f| %>
-  <% @accomplishments.each do |acc| %>     
+  <% @accomplishments.each do |acc| %>
       <%= label_tag acc.id, acc.name %><br>
       <%= check_box_tag acc.name, acc.id %><br>
   <% end %>
